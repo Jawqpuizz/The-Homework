@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="59c01ec9-ff30-4afe-9a20-05ac26b04443" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/hackthis/Homework" />
+  </component>
+  <component name="ProjectId" id="1g50hTTNc2w1AeJUOPyNkCeIjOp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/my_project/venv/EasyTutor" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pornt\Google Drive\Hackathon\Hackillinois\venv\hackthis" />
+      <recent name="C:\Users\pornt\Google Drive\Hackathon\Hackillinois\venv\hackthis\static" />
+      <recent name="C:\Users\pornt\Google Drive\Hackathon\Hackillinois\venv\hackthis\homework" />
+      <recent name="C:\Users\pornt\Google Drive\Hackathon\Hackillinois\venv\hackthis\homework\static" />
+      <recent name="C:\Users\pornt\Google Drive\Hackathon\Hackillinois\venv\hackthis\homework\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\pornt\Google Drive\Hackathon\Hackillinois\venv\hackthis\homework" />
+      <recent name="C:\Users\pornt\Google Drive\Hackathon\Hackillinois\venv\hackthis\homework\static" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="59c01ec9-ff30-4afe-9a20-05ac26b04443" name="Default Changelist" comment="" />
+      <created>1597389264890</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597389264890</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="900" y="239" key="FileChooserDialogImpl" timestamp="1597434975244">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="900" y="239" key="FileChooserDialogImpl/0.0.1504.963@0.0.1504.963" timestamp="1597434975244" />
+    <state x="508" y="124" key="SettingsEditor" timestamp="1597390217265">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="508" y="124" key="SettingsEditor/0.0.1504.963@0.0.1504.963" timestamp="1597390217265" />
+    <state x="816" y="305" key="com.intellij.ide.util.TipDialog" timestamp="1597527372601">
+      <screen x="0" y="0" width="1504" height="963" />
+    </state>
+    <state x="816" y="305" key="com.intellij.ide.util.TipDialog/0.0.1504.963@0.0.1504.963" timestamp="1597527372601" />
+  </component>
+</project>

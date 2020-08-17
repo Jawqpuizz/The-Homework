@@ -1,0 +1,213 @@
+
+:root {
+	--primary-color:rgb(13,110,139,0.10);
+	--overlay-color:rgb(24,39,51,0.70);
+
+}
+
+a{
+	text-decoration: none;
+	color: #db5e9d;
+}
+
+a:hover{
+	text-decoration:none;
+	color: #d698b7;
+
+}
+
+.logo-style{
+	height: 100px;
+	width: 100px;
+}
+ .pri-color{
+ 	background-color: #6ac4f7;
+ }
+
+ .nav-color{
+ 	
+ }
+
+ .content1{
+
+	background: url('../assets/images/plain.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	margin-top: -130px;
+
+
+}
+
+.left-content{
+	margin-top: 50px;
+	margin-right: 20px;
+	float: left;
+}
+.right-content{
+	margin-top: 50px;
+	margin-left: 20px;
+	float: right;
+}
+
+.content2{
+	width: 100%;
+	height:100%;
+	margin-left: 0;
+	background-color: #dff3f5; 	
+
+} 
+.my-bg{
+	height: 	100px;	
+	background-color: #dff3f5; 
+}
+.list{
+		text-align: center;
+	margin-top: 50px;
+
+}
+.list li{
+	display: inline-block;
+	margin-left:70px;
+}
+.block-content{
+	width: 100%;
+}
+.block-content img{
+	width: 100px;
+	height:100px;
+	align-items: center;
+	border-radius: 10px;
+	border-color:  #6ac4f7;
+}
+
+.in-line{
+	display: inline-flex;
+}
+
+.block-3{
+	width: 33%;
+
+}
+
+
+.block{
+	float: left;
+	width: 33%;
+	margin-left:30px; 
+	margin-top: 80px;
+
+}
+ .nav-space{
+ 	margin-left: 150px;
+
+ }
+.block p{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.my-method{
+	list-style: none;
+
+}
+.space{
+ height: 300px;
+}
+
+.my-form{
+	width: 50%;
+	align-items: center;
+	margin-left: 25%;
+	
+
+}
+.form-section{
+	background: url('../assets/images/bg22.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
+	margin-top: -130px;
+
+	   
+}
+.space{
+	height: 200px;
+}
+
+.form-inner{
+	margin-left: 100px;
+	margin-top:  100px;
+
+}
+.line{
+	height: 50px;
+	border-top-style: solid;
+	border-color: gray;
+	margin-top: 30px;
+	width: 50%;
+	margin-left: 25%;
+}
+ul{
+	list-style: 	none;
+
+}
+
+.my-list ul li{
+	margin-top: 	10px;
+	font-size: 	25px;
+}
+
+.block-content h4{
+	margin-top: 30px;
+}
+.block-content h6{
+	margin-top: 15px;
+	margin-left: 10%;
+	width: 80%;
+}
+
+.font-25{
+	font-size: 25px;
+}
+
+.my-footer{
+	background-color: #39abed;
+	height: 300px;
+	
+
+}
+.my-footer h3{
+	padding-top: 100px;
+}
+
+.main{
+	height: 600px;
+}
+
+.font-prim{
+	color: #085287;
+}
+
+.my-mt-100{
+
+	margin-top: 100px;
+
+}
+
+.my-hover img:hover{
+	opacity: 50%;
+}
+.block-2{
+	width: 50%;
+}
+.block-2 p{
+	margin-top: 30px;
+	margin-left: 25%;
+	width: 50%;
+}
+.block-3 p{
+	margin-top: 30px;
+	margin-left: 15%;
+	width: 70%;
+}
