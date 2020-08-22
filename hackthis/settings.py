@@ -76,7 +76,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'the_homework',
         'USER': 'root',
-        'PASSWORD': 'fashop2020',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }
