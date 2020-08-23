@@ -43,16 +43,22 @@
           <div class=" space">
             <p>  &nbsp </p> 
           </div>
+          <form method = "POST" >
+          {% csrf_token%}
             <div class="text-center">
             <h1>Glad to see you are back to The HomeWork again!!</h1>
-
+            {%if message%}
+            <div class="alert alert-danger" role="alert">
+             <h6>{{message}}</h6>
+            </div>
+            {%endif%}
             </div>
           <div class="form-inner">
                   <div class="form-group my-form">
-                    <label class="mb-1">Username or Email</label>
+                    <label class="mb-1">Email</label>
                     <div class="position-relative icon-form-control">
                       <i class="mdi mdi-account position-absolute"></i>
-                      <input type="email" class="form-control">
+                      <input type="email" class="form-control" name ="email" required>
                     </div>
                   </div>
 
@@ -60,14 +66,15 @@
                     <label class="mb-1">Password</label>
                     <div class="position-relative icon-form-control">
                       <i class="mdi mdi-key-variant position-absolute"></i>
-                      <input type="password" class="form-control">
+                      <input type="password" class="form-control" name ="password" required>
                     </div>
                   </div>
 
 
-          <div class="text-center">
-            <button class="btn btn-light pri-color" >Log In</button>
-          </div>
+                  <div class="text-center">
+                    <button class="btn btn-light pri-color" >Log In</button>
+                  </div>
+          <form>
 
           <div class="line"><!--line-->
             <p>&nbsp</p>

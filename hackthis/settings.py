@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'homework',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -71,8 +72,15 @@ WSGI_APPLICATION = 'hackthis.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.sqlite3',
+   #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #   }
+#}
+#database for mysql
 DATABASES = {
-    'default': {
+   'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'the_homework',
         'USER': 'root',
@@ -125,3 +133,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIR = [
 "hackthis/homwork/static",
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

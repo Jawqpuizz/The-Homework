@@ -1,9 +1,9 @@
-{%load static %}}
+{%load static%}
 <html>
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="The homework web application">
+       <meta name="description" content="The homework web application">
       <meta name="author" content="Porntip Gurusvasti">
       <title>The Homework | Best Education platform for submitting assignment</title>
       <!-- Favicon Icon -->
@@ -24,92 +24,27 @@
       <!-- Custom styles for this template -->
       <link href="{%static 'css/style.css' %}" rel="stylesheet">
    </head>
-
    <body>
-      <nav class="navbar navbar-expand-lg navbar-light topbar static-top shadow-sm osahan-nav-top px-0">
+      <nav class="navbar navbar-expand-lg nav-color topbar static-top shadow-sm osahan-nav-top px-0">
          <div class="container">
             <!-- Sidebar Toggle (Topbar) -->
-             <a class="navbar-brand " href="index.html"><img class="logo-style" src="{% static 'assets/images/TheHW_Logo.png' %}"  alt=""></a>
+            <a class="navbar-brand" href="/home"><img class="logo-style" src="{% static 'assets/images/TheHW_Logo.png' %}"  alt=""></a>
 
-          <div>
-            <a class="btn btn-light pri-color" href="/login">Log out</a>
-          </div>
-        
+            
+
+          
 
          </div> <!--End Container class-->
      </nav>
-   
 
-
-    
-   
-
-       <!--first content section-->
-
-       <div class=" container">
-        <div class="main">
-          <div class="text-center mt-lg-5 font-prim">
-              <h1>Welcome <span style="color: #db5e9d;">{{username}}</span></h1>
-            <h4 class= "text-center m-2">As you are a <span style="color: #db5e9d;">student</span>, what are you looking for?</h4>
-          </div>
-
-          <div class="my-mt-100 my-hover">
-            <ul class="block-content in-line mt-4">
-
-              <div class="block-3 text-center ">             
-                <li>
-                <a href="#"><img src="{% static 'assets/images/submit.png' %}"> </a>
-                <h5 class="mt-4"> Submit your homework </h5>
-                <p>If you finished your homework you can submit here</p>
-              </li>
-            </div> 
-
-            <div class="block-3 text-center">
-              <li>
-                <a href="#"><img  src="{% static 'assets/images/edit_hw.png' %}"></a>
-                <h5 class="mt-4">Your Homework </h5>
-                <p>An easy way to do your homework online, don't need to spend time to download and upload. Just one click on the image above </p>
-              </li>
-            </div>
-
-            <div class="block-3 text-center">
-              <li>
-                <a href=""><img src="{% static 'assets/images/feedback.png'%} "></a>
-                <h5 class="mt-4">Status & Feedback </h5>
-                <p>Want to know status and feedback of your homework </p>
-              </li>
-            </div>
-
-
-
-            </ul>
-          </div>
-          
-        </div>
-         
-
-       </div>
        
-
-
-       <!---footer-->
-       <div class="text-center my-footer">
-
-      		<div >
-       		<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</h3>
-       		<h4 class="">Someone famous in <cite title="Source Title">Source Title</cite></h4>
-       		</div>
-      
-
-       </div>
-       	
  
 
 
 
 
 
-       <!-- Bootstrap core JavaScript -->
+      <!-- Bootstrap core JavaScript -->
       <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
       <!-- Contact form JavaScript -->
