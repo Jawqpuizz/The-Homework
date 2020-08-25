@@ -1,4 +1,5 @@
 {%load static%}
+{%load crispy_forms_tags%}
 <html>
    <head>
       <meta charset="utf-8">
@@ -24,90 +25,60 @@
       <!-- Custom styles for this template -->
       <link href="{%static 'css/style.css' %}" rel="stylesheet">
    </head>
+
    <body>
-      <nav class="navbar navbar-expand-lg nav-color topbar static-top shadow-sm osahan-nav-top px-0">
+      <nav class="navbar navbar-expand-lg navbar-light topbar static-top shadow-sm osahan-nav-top px-0">
          <div class="container">
             <!-- Sidebar Toggle (Topbar) -->
-            <a class="navbar-brand" href="/home"><img class="logo-style" src="{% static 'assets/images/TheHW_Logo.png' %}"  alt=""></a>
+             <a class="navbar-brand " href="index.html"><img class="logo-style" src="{% static 'assets/images/TheHW_Logo.png'%}"  alt=""></a>
 
-            
+             
 
-          
+          <div>
+            <button class="btn btn-light pri-color" onclick ="">Log out</button>
+          </div>
+        
 
          </div> <!--End Container class-->
      </nav>
+   
 
        <!--first content section-->
-       <div class = "form-section ">
-        <div class="container ">
-          <div class=" space">
-            <p>  &nbsp </p> 
-          </div>
-          <form method = "POST" >
-          {% csrf_token%}
-            <div class="text-center">
-            <h1>Glad to see you are back to The HomeWork again!!</h1>
-            {%if message%}
-            <div class="alert alert-danger" role="alert">
-             <h6>{{message}}</h6>
-            </div>
-            {%endif%}
-            </div>
-          <div class="form-inner">
-                  <div class="form-group my-form">
-                    <label class="mb-1">Email</label>
-                    <div class="position-relative icon-form-control">
-                      <i class="mdi mdi-account position-absolute"></i>
-                      <input type="email" class="form-control" name ="email" required>
-                    </div>
-                  </div>
 
-                  <div class="form-group my-form">
-                    <label class="mb-1">Password</label>
-                    <div class="position-relative icon-form-control">
-                      <i class="mdi mdi-key-variant position-absolute"></i>
-                      <input type="password" class="form-control" name ="password" required>
-                    </div>
-                  </div>
-
-
-                  <div class="text-center">
-                    <button class="btn btn-light pri-color" >Log In</button>
-                  </div>
-          <form>
-
-          <div class="line"><!--line-->
-            <p>&nbsp</p>
-          </div>
-
-          <div class="text-center">
-            <h5>Don't have an account? <a href="/signup"> Sign up</a></h5>
-          </div>
-
-           </div><!--enf form-inner-->   
-           
-
-          </div>
+       <div class=" container mt-5 mb-5 ">
+       <form method = "POST" enctype ="multipart/form-data">
+       {% csrf_token%}
+       <div class = "text-center">
+       <h2> Upload Homework</h2>
+       </div>
+       {{form|crispy}}
+       <div class= "text-center mt-5">
+       <button type="submit" class="btn btn-light pri-color">Upload file</button>
+        </div>
+       </form>
         
-    </div>
+       </div>
+       
+
 
        <!---footer-->
-           <div class="text-center my-footer">
+       <div class="text-center my-footer">
 
-          <div >
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</h3>
-          <h4 class="">Someone famous in <cite title="Source Title">Source Title</cite></h4>
-          </div>
+      		<div >
+       		<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</h3>
+       		<h4 class="">Someone famous in <cite title="Source Title">Source Title</cite></h4>
+       		</div>
       
 
        </div>
+       	
  
 
 
 
 
 
-      <!-- Bootstrap core JavaScript -->
+       <!-- Bootstrap core JavaScript -->
       <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
       <!-- Contact form JavaScript -->

@@ -20,7 +20,7 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('homework.urls')),
-    url('login/', include('homework.urls')),
+    url('login/', include('homework.urls',namespace='homework')),
     url('signup/', include('homework.urls')),
 
 ]

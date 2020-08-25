@@ -7,7 +7,7 @@
       <meta name="author" content="Porntip Gurusvasti">
       <title>The Homework | Best Education platform for submitting assignment</title>
       <!-- Favicon Icon -->
-      <link rel="icon" type="image/png" href="assets/images/Homework.jpg">
+      <link rel="icon" type="image/png" href="{% static 'assets/images/Homework.jpg' %}">
       <!-- Bootstrap core CSS -->
       <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
       <!-- Font Awesome-->
@@ -66,7 +66,7 @@
 
             <div class="block-3 text-center">
               <li>
-                <a href="#"><img  src="{% static 'assets/images/edit_hw.png' %}"></a>
+                <a href="/student/{{username}}/hw_list"><img  src="{% static 'assets/images/edit_hw.png' %}"></a>
                 <h5 class="mt-4">Your Homework </h5>
                 <p>An easy way to do your homework online, don't need to spend time to download and upload. Just one click on the image above </p>
               </li>

@@ -1,8 +1,12 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@200;300;400;500;600;700;800;900&display=swap');
 :root {
 	--primary-color:rgb(13,110,139,0.10);
 	--overlay-color:rgb(24,39,51,0.70);
 
+}
+
+html{
+	font-family: 'Muli', sans-serif !important; 
 }
 
 a{
@@ -209,4 +213,15 @@ ul{
 	margin-top: 30px;
 	margin-left: 15%;
 	width: 70%;
+}
+.my-ml5-mr5{
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+td{
+	word-wrap: break-word;
+}
+.i-font{
+	font-family: 'Muli', sans-serif !important
 }

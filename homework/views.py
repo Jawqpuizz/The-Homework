@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import registerForm
-from .models import UserRegister
+from .forms import HomeworkForm, SubmissionForm
+from .models import UserRegister, HomeworkList, Homeworkfeedback
 from django.contrib import messages
+from django import forms
 
 
 def home(request):
@@ -11,7 +12,7 @@ def home(request):
 
 # Create your views here.
 def signup(request):
-
+    #tried to used form but it did not save it for me
     if request.method == 'POST':
         print(request.POST.get('email'))
         if request.POST.get('userrole') and request.POST.get('username') and request.POST.get(
@@ -56,3 +57,41 @@ def teachers(request,username):
 
 def students(request,username):
     return render(request, 'students.html', {'username':username})
+
+#------------Homwork list for student-------------
+def homeworkList(request,username):
+    homework = HomeworkList.objects.all()
+    return render(request, 'list.html', {'homework':homework
+    ,'username':username})
+
+def upload(request,username):
+    if request.method == "POST":
+        form = HomeworkForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/teacher/'+username)
+        else:
+            print(form.cleaned_data['hw_name'])
+            print(form.cleaned_data['hw_desc'])
+            print(form.cleaned_data['hw_name'])
+            print(form.cleaned_data['creator_name'])
+    else:
+        form = HomeworkForm(initial={"creator_name": username})
+        #to hide the udername field but want to have it because we wan to save this field in to database
+        form.fields['creator_name'].widget = forms.HiddenInput()
+    return render(request, 'upload.html',{'form':form})  
+#-------------------------------------------
+
+
+def hw_submit(request,username):
+    if request.method == "POST":
+        result = request.POST.get('upload')
+        info = [x.strip() for x in result.split(',')]
+        hwId = info[0]
+        hwName = info[1]
+        hwTeacher =info[2]
+        return render(request,'hwSubmit.html',{
+        'username':username,'hwId':hwId,'hwName':hwName,'hwTeacher':hwTeacher
+        })
+    else:
+        print("not found")

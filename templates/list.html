@@ -1,3 +1,4 @@
+
 {%load static%}
 <html>
    <head>
@@ -7,7 +8,7 @@
       <meta name="author" content="Porntip Gurusvasti">
       <title>The Homework | Best Education platform for submitting assignment</title>
       <!-- Favicon Icon -->
-      <link rel="icon" type="image/png" href="assets/images/Homework.jpg">
+      <link rel="icon" type="image/png" href="{% static 'assets/images/Homework.jpg' %}">
       <!-- Bootstrap core CSS -->
       <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
       <!-- Font Awesome-->
@@ -29,22 +30,69 @@
          <div class="container">
             <!-- Sidebar Toggle (Topbar) -->
             <a class="navbar-brand" href="/home"><img class="logo-style" src="{% static 'assets/images/TheHW_Logo.png' %}"  alt=""></a>
-
-            
-
-          
-
+         <div>
+            <a class="btn btn-light pri-color" href="/login">Log out</a>
+          </div>
          </div> <!--End Container class-->
      </nav>
 
-       
+
  
 
 
+       <div class="mt-5 mb-2 text-center">
+       <h3>Homework List</h3>
+       </div>
+      
+       <div class ="mt-5 ml-5 mr-5">
+        <form action = "submit/" method = "POST" >
+        {% csrf_token %}
+       <table id="example" class="table table-bordered table-hover mt-5">
 
+         <thead class= "pri-color">
+            <tr>
+               <th scope="col">#</th>
+               <th scope="col">Name</th>
+               <th scope="col">Description</th>
+               <th scope="col">Assignment File</th>
+               <th scope="col">Professor</th>
+               <th scope="col">Date</th>
+               <th scope="col">Submit</th>
+            </tr>
+         </thead>
+         <tbody>
+         {%for hw in homework%}
+            <tr >
+               <td scope="row">{{hw.hw_id}}</td>
+               <td >{{hw.hw_name}}</td>
+               <td>{{hw.hw_desc}}</td>
+               <td>
+               <a href="/media/{{hw.hw_file}}" class="btn btn-light btn-sm i-font">
+               Download File</td>
+               <td>{{hw.creator_name}}</td>
+               <td>{{hw.datetime}}</td>
+               <td><button type='hidden' class="btn btn-light btn-sm"
+               name= "upload" value="{{hw.hw_id}},{{hw.hw_name}},{{hw.creator_name}}"  >
+               Upload File</button>
+            </tr>
+         {%endfor%} 
+         </tbody>
+         </table>
+         </form>
+      </div> 
 
+      
+<!--footer-->
+     <div class="text-center my-footer mt-5">
+      		<div >
+       		<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</h3>
+       		<h4 class="">Someone famous in <cite title="Source Title">Source Title</cite></h4>
+       		</div>
+      
 
-      <!-- Bootstrap core JavaScript -->
+       </div>
+
+     <!-- Bootstrap core JavaScript -->
       <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
       <!-- Contact form JavaScript -->
@@ -61,3 +109,6 @@
       <script src="{% static 'js/custom.js'%}"></script>
    </body>
 </html>
+
+
+      

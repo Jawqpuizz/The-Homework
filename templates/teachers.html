@@ -8,7 +8,7 @@
       <meta name="author" content="Porntip Gurusvasti">
       <title>The Homework | Best Education platform for submitting assignment</title>
       <!-- Favicon Icon -->
-      <link rel="icon" type="image/png" href="assets/images/Homework.jpg">
+      <link rel="icon" type="image/png" href="{% static 'assets/images/Homework.jpg' %}">
       <!-- Bootstrap core CSS -->
       <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
       <!-- Font Awesome-->
@@ -61,7 +61,7 @@
 
               <div class="block-2 text-center ">             
                 <li>
-                <a href="#"><img  src="{%static 'assets/images/submit-feedback.png' %}"> </a>
+                <a href="/teacher/{{username}}/upload"><img  src="{%static 'assets/images/submit-feedback.png' %}"> </a>
                 <h5 class="mt-4">Upload homework</h5>
                 <p> Create an assignment here with our text editor, easy to use and easy to send it to your students</p>
               </li>

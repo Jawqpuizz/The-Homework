@@ -1,4 +1,5 @@
 {%load static%}
+{%load crispy_forms_tags%}
 <html>
    <head>
       <meta charset="utf-8">
@@ -7,7 +8,7 @@
       <meta name="author" content="Porntip Gurusvasti">
       <title>The Homework | Best Education platform for submitting assignment</title>
       <!-- Favicon Icon -->
-      <link rel="icon" type="image/png" href="assets/images/Homework.jpg">
+      <link rel="icon" type="image/png" href="{% static 'assets/images/Homework.jpg' %}">
       <!-- Bootstrap core CSS -->
       <link href="{%static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
       <!-- Font Awesome-->
@@ -44,20 +45,49 @@
 
        <!--first content section-->
 
-       <div class=" container ">
-        <div class="main ">
-          <div class="input-group  my-mt-100 block-2 ">
-  <div class="input-group-prepend">
-    <span class="input-group-text">Upload</span>
-  </div>
-  <div class="custom-file">
-    <input type="file" id="inputGroupFile01">
-    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-  </div>
-</div>
-         
-           </div> 
+       <div class=" container mt-5 mb-5 ">
+      
+        <div class="text-center">
+        <h2>Sunmit Your Homework</h2>
+        </div>
+         <form method = "POST" enctype ="multipart/form-data">
+       {% csrf_token%}
+
+         <div class="form-inner">
+
+                <div class="mb-5">
+                {%if hwId%}
+                    <h4>Homwork ID : {{hwId}}</h4>
+                {%endif%}
+
+                {%if hwName%}
+                    <h4>Homwork Name : {{hwName}}</h4>
+                {%endif%}
+
+                {%if hwTeacher%}
+                    <h4>Professor : {{hwTeacher}}</h4>
+                {%endif%}
+                </div>
+
+                  <div class="form-group my-form mt-5 mb-5">
+                    <label class="mb-1">Upload File</label>
+                      <input type="file" class="" name ="hw_file" required>
+                  </div>
+
+                  <div class="form-group my-form">
+                    <label>Notes</label>
+                    <textarea class="form-control" rows="3"></textarea> 
+                  </div>
+
+
+                  <div class="text-center">
+                    <button class="btn btn-light pri-color" >Log In</button>
+                  </div>
+      
+       </form>
+        
        </div>
+      </div> 
        
 
 
