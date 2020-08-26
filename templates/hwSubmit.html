@@ -31,41 +31,43 @@
          <div class="container">
             <!-- Sidebar Toggle (Topbar) -->
              <a class="navbar-brand " href="index.html"><img class="logo-style" src="{% static 'assets/images/TheHW_Logo.png'%}"  alt=""></a>
-
-             
-
-          <div>
-            <button class="btn btn-light pri-color" onclick ="">Log out</button>
-          </div>
-        
-
          </div> <!--End Container class-->
      </nav>
    
+    {% if user.is_authenticated %}
 
-       <!--first content section-->
+    <!--this page for student only show error if users is Teacher-->
+    {%if user.first_name == 'Teacher'%}
+    <div class =" text-center mt-5">
+    <h1> You are a teacher</h1>
+    <h1> This page is for students only</h1>
+    </div>
+    
+    {%else%}
+
+   <!--first content section-->
 
        <div class=" container mt-5 mb-5 ">
       
         <div class="text-center">
         <h2>Sunmit Your Homework</h2>
         </div>
-         <form method = "POST" enctype ="multipart/form-data">
+         <form action="" method = "POST" enctype ="multipart/form-data">
        {% csrf_token%}
 
          <div class="form-inner">
 
                 <div class="mb-5">
                 {%if hwId%}
-                    <h4>Homwork ID : {{hwId}}</h4>
+                    <h4>Homwork ID :<input class="from-control" name="hw_id" value ="{{hwId}}" readonly></h4>
                 {%endif%}
 
                 {%if hwName%}
-                    <h4>Homwork Name : {{hwName}}</h4>
+                    <h4>Homwork Name :<input class="form-control" name="hw_name" value ="{{hwName}}" readonly></h4>
                 {%endif%}
 
                 {%if hwTeacher%}
-                    <h4>Professor : {{hwTeacher}}</h4>
+                    <h4>Homwork Teacher :<input class="form-control" name="teacher_name" value ="{{hwTeacher}}" readonly></h4>
                 {%endif%}
                 </div>
 
@@ -76,12 +78,12 @@
 
                   <div class="form-group my-form">
                     <label>Notes</label>
-                    <textarea class="form-control" rows="3"></textarea> 
+                    <textarea class="form-control" rows="3" name="notes" ></textarea> 
                   </div>
 
 
                   <div class="text-center">
-                    <button class="btn btn-light pri-color" >Log In</button>
+                    <button type="submit" class="btn btn-light pri-color" >Upload</button>
                   </div>
       
        </form>
@@ -102,7 +104,7 @@
 
        </div>
        	
- 
+    {%endif%}
 
 
 
@@ -124,4 +126,9 @@
       <!-- Custom -->
       <script src="{% static 'js/custom.js'%}"></script>
    </body>
+   {% else %}
+    <div class = "text-center mt-5">
+    <h2>Login<a href ="/login">&nbsp; here</a></h2>
+    </div>
+    {% endif %}
 </html>

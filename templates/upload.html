@@ -31,17 +31,12 @@
          <div class="container">
             <!-- Sidebar Toggle (Topbar) -->
              <a class="navbar-brand " href="index.html"><img class="logo-style" src="{% static 'assets/images/TheHW_Logo.png'%}"  alt=""></a>
-
-             
-
-          <div>
-            <button class="btn btn-light pri-color" onclick ="">Log out</button>
-          </div>
         
 
          </div> <!--End Container class-->
      </nav>
    
+      {% if user.is_authenticated %}
 
        <!--first content section-->
 
@@ -94,4 +89,10 @@
       <!-- Custom -->
       <script src="{% static 'js/custom.js'%}"></script>
    </body>
+
+   {% else %}
+   <div class = "text-center mt-5">
+   <h2>Login<a href ="/login">&nbsp; here</a></h2>
+   </div>
+   {% endif %}
 </html>

@@ -1,4 +1,6 @@
-{%load static %}}
+{%load static %}
+
+
 <html>
    <head>
       <meta charset="utf-8">
@@ -31,50 +33,52 @@
             <!-- Sidebar Toggle (Topbar) -->
              <a class="navbar-brand " href="index.html"><img class="logo-style" src="{% static 'assets/images/TheHW_Logo.png' %}"  alt=""></a>
 
+  
+       {% if user.is_authenticated %}
+
           <div>
-            <a class="btn btn-light pri-color" href="/login">Log out</a>
+            <a class="btn btn-light pri-color" href="/logout">Log out</a>
           </div>
-        
+         {% endif%}
 
          </div> <!--End Container class-->
      </nav>
    
 
 
-    
-   
+    {% if user.is_authenticated %}
 
        <!--first content section-->
 
        <div class=" container">
         <div class="main">
           <div class="text-center mt-lg-5 font-prim">
-              <h1>Welcome <span style="color: #db5e9d;">{{username}}</span></h1>
+              <h1>Welcome <span style="color: #db5e9d;">{{user}}</span></h1>
             <h4 class= "text-center m-2">As you are a <span style="color: #db5e9d;">student</span>, what are you looking for?</h4>
           </div>
 
           <div class="my-mt-100 my-hover">
             <ul class="block-content in-line mt-4">
-
-              <div class="block-3 text-center ">             
+<!--    <div class="block-3 text-center ">             
                 <li>
                 <a href="#"><img src="{% static 'assets/images/submit.png' %}"> </a>
                 <h5 class="mt-4"> Submit your homework </h5>
                 <p>If you finished your homework you can submit here</p>
               </li>
-            </div> 
+            </div> -->
+          
 
-            <div class="block-3 text-center">
+            <div class="block-2 text-center">
               <li>
-                <a href="/student/{{username}}/hw_list"><img  src="{% static 'assets/images/edit_hw.png' %}"></a>
+                <a href="/student/{{user}}/hw_list"><img  src="{% static 'assets/images/edit_hw.png' %}"></a>
                 <h5 class="mt-4">Your Homework </h5>
                 <p>An easy way to do your homework online, don't need to spend time to download and upload. Just one click on the image above </p>
               </li>
             </div>
 
-            <div class="block-3 text-center">
+            <div class="block-2 text-center">
               <li>
-                <a href=""><img src="{% static 'assets/images/feedback.png'%} "></a>
+                <a href="feedback_list"><img src="{% static 'assets/images/feedback.png'%} "></a>
                 <h5 class="mt-4">Status & Feedback </h5>
                 <p>Want to know status and feedback of your homework </p>
               </li>
@@ -125,4 +129,10 @@
       <!-- Custom -->
       <script src="{% static 'js/custom.js'%}"></script>
    </body>
+ 
+{% else %}
+<div class = "text-center mt-5">
+<h2>Login<a href ="/login">&nbsp; here</a></h2>
+</div>
+{% endif %}
 </html>

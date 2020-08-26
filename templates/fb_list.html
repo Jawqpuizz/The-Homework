@@ -1,5 +1,4 @@
 {%load static%}
-
 <html>
    <head>
       <meta charset="utf-8">
@@ -25,70 +24,79 @@
       <!-- Custom styles for this template -->
       <link href="{%static 'css/style.css' %}" rel="stylesheet">
    </head>
-
    <body>
-      <nav class="navbar navbar-expand-lg navbar-light topbar static-top shadow-sm osahan-nav-top px-0">
+      <nav class="navbar navbar-expand-lg nav-color topbar static-top shadow-sm osahan-nav-top px-0">
          <div class="container">
             <!-- Sidebar Toggle (Topbar) -->
-             <a class="navbar-brand " href="index.html"><img class="logo-style" src="{%static 'assets/images/TheHW_Logo.png' %}"  alt=""></a>
-
-          {% if user.is_authenticated %}   
-
-          <div>
+            <a class="navbar-brand" href="/home"><img class="logo-style" src="{% static 'assets/images/TheHW_Logo.png' %}"  alt=""></a>
+         {% if user.is_authenticated %}   
+         <div>
             <a class="btn btn-light pri-color" href="/login">Log out</a>
           </div>
-          {% endif %}
-
+         {% endif %}
          </div> <!--End Container class-->
      </nav>
-   
 
 
-    {% if user.is_authenticated %}
-   
+ 
+   {% if user.is_authenticated %}
 
-       <!--first content section-->
-
-       <div class=" container">
-        <div class="main">
-          <div class="text-center mt-lg-5 font-prim">
-              <h1>Welcome back <span style="color: #db5e9d;">{{user}}</span></h1>
-            <h4 class= "text-center m-2">As you are a <span style="color: #db5e9d;">teacher</span>, what are you looking for?</h4>
-          </div>
-
-          <div class="my-mt-100 my-hover">
-            <ul class="block-content in-line mt-4">
-
-              <div class="block-2 text-center ">             
-                <li>
-                <a href="/teacher/{{user}}/upload"><img  src="{%static 'assets/images/submit-feedback.png' %}"> </a>
-                <h5 class="mt-4">Upload homework</h5>
-                <p> Create an assignment here with our text editor, easy to use and easy to send it to your students</p>
-              </li>
-            </div> 
-
-            <div class="block-2 text-center">
-              <li>
-                <a href="feedback_list"><img  src="{%static 'assets/images/grading.png' %}"></a>
-                <h5 class="mt-4">Grading & feedback</h5>
-                <p> Click on the image when you are ready to grade your students homework and give them your feedback online</p>
-              </li>
-            </div>
-
-
-            </ul>
-          </div>
-          
-        </div>
-         
-
+       <div class="mt-5 mb-2 text-center">
+       <h3>Homework status & feedback</h3>
        </div>
-       
+      
+       <div class ="mt-5 ml-5 mr-5">
+        <form action = "" method = "POST" >
+        {% csrf_token %}
+       <table id="example" class="table table-bordered table-hover mt-5">
 
+         <thead class= "pri-color">
+            <tr>
+               <th scope="col">HW ID</th>
+               <th scope="col">Name</th>
+               <th scope="col">Homework File</th>
+               <th scope="col">status</th>
+               <th scope="col">Students Notes</th>
+               <th scope="col">Feedback</th>
+               {%if user.first_name == 'Student'%}
+               <th>Teacher Name</th>
+               {%else%}
+               <th>Student Name</th>
+               <th>Add Feedback</th>
+               {%endif%}
+            </tr>
+         </thead>
+         <tbody>
+         
+         {%for fb in feedback%}
+            <tr >
+               <td scope="row">{{fb.hw_id}}</td>
+               <td >{{fb.hw_name}}</td>
+               <td>
+               <a href="/media/{{fb.hw_file}}" class="btn btn-light btn-sm i-font">
+               Download File</td>
+                <td>{{fb.hw_status}}</td>
+                <td>{{fb.student_notes}}</td>
+                <td>{{fb.feedback}}</td>
+               {%if user.first_name == 'Student'%}
+               <td>{{fb.teacher_name}}</td>
+               {%else%}
+               <td>{{fb.creator}}</td>
+               <td><button type='hidden' class="btn btn-light btn-sm"
+               name= "upload" value=""  >
+                Click here!</button>
+               {%endif%}
+               
+            </tr>
+            {%endfor%}
+         </tbody>
+         </table>
+         </form>
+      </div> 
 
-       <!---footer-->
-       <div class="text-center my-footer">
-
+      
+<!--footer-->
+     <div class="text-center my-footer mt-5">
       		<div >
        		<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</h3>
        		<h4 class="">Someone famous in <cite title="Source Title">Source Title</cite></h4>
@@ -96,14 +104,8 @@
       
 
        </div>
-       	
- 
 
- 
-
-
-
-      <!-- Bootstrap core JavaScript -->
+     <!-- Bootstrap core JavaScript -->
       <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
       <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
       <!-- Contact form JavaScript -->
@@ -120,10 +122,12 @@
       <script src="{% static 'js/custom.js'%}"></script>
    </body>
 
-
-    {% else %}
-    <div class = "text-center mt-5">
-    <h2>Login<a href ="/login">&nbsp; Here</a></h2>
-    </div>
-  {% endif %}
+   {% else %}
+<div class = "text-center mt-5">
+<h2>Login<a href ="/login">&nbsp; here</a></h2>
+</div>
+{% endif %}
 </html>
+
+
+      

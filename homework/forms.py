@@ -31,4 +31,4 @@ class SubmissionForm(forms.ModelForm):
 
     class Meta:
         model = Homeworkfeedback
-        fields = ("hw_id","status","file_name","creator","teacher_name")
+        fields = ("hw_id","status","hw_name","creator","teacher_name")

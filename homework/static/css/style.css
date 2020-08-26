@@ -28,9 +28,7 @@ a:hover{
  	background-color: #6ac4f7;
  }
 
- .nav-color{
- 	
- }
+
 
  .content1{
 
@@ -224,4 +222,10 @@ td{
 }
 .i-font{
 	font-family: 'Muli', sans-serif !important
+}
+.p404{
+	background: url('../assets/images/404-vector.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100vh;
 }
