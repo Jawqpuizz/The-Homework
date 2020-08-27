@@ -22,7 +22,7 @@ class HomeworkList(models.Model):
     datetime =models.DateField(default=datetime.datetime.now)
     hw_name = models.CharField(max_length=255)
     hw_desc = models.CharField(max_length=255)
-    hw_file = models.FileField(upload_to='homework/hw_files')
+    hw_file = models.FileField(upload_to='documents/hw_master')
     creator_name = models.CharField(max_length=100)
     objects = models.Manager
 
@@ -35,7 +35,7 @@ class Homeworkfeedback(models.Model):
     hw_id = models.IntegerField()
     datetime =models.DateField(default=datetime.datetime.now)
     hw_name = models.CharField(max_length=255)
-    hw_file = models.FileField(upload_to='homework/hw_submission')
+    hw_file = models.FileField(upload_to='documents/hw_submission')
     status = models.CharField(max_length=255)
     feedback = models.CharField(max_length=255)
     creator = models.CharField(max_length=100)

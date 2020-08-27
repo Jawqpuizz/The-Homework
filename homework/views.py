@@ -5,6 +5,9 @@ from .forms import HomeworkForm, SubmissionForm
 from .models import UserRegister, HomeworkList, Homeworkfeedback,MyUserAuth
 from django.contrib import messages
 from django import forms
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings 
+
 from django.contrib.auth.models import User,auth
 
 
@@ -94,6 +97,13 @@ def upload(request,username):
     if request.method == "POST":
         form = HomeworkForm(request.POST, request.FILES)
         if form.is_valid():
+            doc = form.cleaned_data['hw_file']
+            fs_hw = FileSystemStorage(
+                location = settings.FS_DOCUMENT_UPLOADS,
+                base_url=settings.FS_DOCUMENT_URL
+            )
+            documentName = fs_hw.save(doc.name, doc)
+            uploaded_document_url = fs_hw.url(documentName)
             form.save()
             return redirect('/teacher/'+username)
         else:

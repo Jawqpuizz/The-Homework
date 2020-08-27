@@ -145,6 +145,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 MEDIA_URL = '/media/'
+FS_DOCUMENT_UPLOADS = os.path.join(MEDIA_ROOT,'documents/')
+FS_DOCUMENT_URL = os.path.join(MEDIA_URL,'documents/')
 
 #---redirect to the homepage when ever we login
 LOGIN_REDIRECT_URL = "/login"
