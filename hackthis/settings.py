@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
+import django_heroku
 import os
+ 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -150,3 +151,5 @@ FS_DOCUMENT_URL = os.path.join(MEDIA_URL,'documents/')
 
 #---redirect to the homepage when ever we login
 LOGIN_REDIRECT_URL = "/login"
+
+django_heroku.settings(locals())
