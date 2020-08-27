@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')!$-=#p@)57-552qsx)&ddy)9is__9$q99el@rnwzujw&w@5!p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -82,12 +82,12 @@ WSGI_APPLICATION = 'hackthis.wsgi.application'
 #database for mysql
 DATABASES = {
    'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'the_homework',
-        'USER': 'root',
-        'PASSWORD': 'fashop2020',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 #----------custom user Model
